@@ -1708,6 +1708,19 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "ValidateTheNameModelBinding/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ValidateTheNameModelBinding.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ValidateTheNameModelBinding.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5497,12 +5510,17 @@
         "xunit.runner.visualstudio.2.5.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "ValidateTheNameModelBinding/1.0.0": {
+      "type": "project",
+      "path": "../øvelse26/ValidateTheNameModelBinding.csproj",
+      "msbuildProject": "../øvelse26/ValidateTheNameModelBinding.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "C:\\Users\\JohnL\\Desktop\\projekter\\pipelineExercise\\øvelse26\\ValidateTheNameModelBinding.csproj",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
+      "ValidateTheNameModelBinding >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.5.3",
       "xunit.runner.visualstudio >= 2.5.3"
@@ -5593,16 +5611,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\JohnL\\Desktop\\projekter\\pipelineExercise\\øvelse26\\ValidateTheNameModelBinding.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\JohnL\\Desktop\\projekter\\pipelineExercise\\øvelse26\\ValidateTheNameModelBinding.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }
