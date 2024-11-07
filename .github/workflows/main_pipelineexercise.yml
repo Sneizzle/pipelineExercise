@@ -10,8 +10,19 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        working-directory: ./UnitTests.Invariance
+        run: dotnet test
+
   build:
     runs-on: windows-latest
+    needs: test
 
     steps:
       - uses: actions/checkout@v4
@@ -40,14 +51,14 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -62,4 +73,3 @@ jobs:
           app-name: 'pipelineExercise'
           slot-name: 'Production'
           package: .
-          
